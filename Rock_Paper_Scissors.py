@@ -12,7 +12,7 @@ def enter() :
     play = input('\nPlease Enter a Number: ')
     while (play != '0') and (play != '1') and (play != '2') :
         top()
-        print('\nError: Input "' + str(play) + '" is not valid')
+        print('\nError: Input is not valid')
         play = input('Please Enter a Number: ')
 
     top()
@@ -22,8 +22,10 @@ def enter() :
         print('\nYou entered: Rock')
     elif play == '1' :
         print('\nYou entered: Paper')
-    else :
+    elif play == '2' :
         print('\nYou entered: Scissors')
+    else :
+        print('ERROR')
     return play
 
 def bot_move() :
@@ -35,35 +37,23 @@ def bot_move() :
         print('Paper')
     elif bot == 2:
         print('Scissors')
+    else :
+        print('ERROR')
     return bot
 
 def win_conditions(play, bot) :
-    print('Game Outcome:', end = ' ')
-    if int(play) == 0 :         # user inputs rock
-        if bot == 0 :
-            print('Tie')
-        elif bot == 1 :
-            print('Loss')
-        elif bot == 2 :
-            print('Win')
-    elif int(play) == 1 :       # user inputs paper
-        if bot == 0 :
-            print('Win')
-        elif bot == 1 :
-            print('Tie')
-        elif bot == 2 :
-            print('Loss')
-    elif int(play) == 2 :       # user inputs scissors
-        if bot == 0 :
-            print('Loss')
-        elif bot == 1 :
-            print('Win')
-        elif bot == 2 :
-            print('Tie')
+    condition = 'ERROR'
+    if (int(play) + 1) % 3 == bot :
+        condition = 'Loss'
+    elif (int(play) + 2) % 3 == bot :
+        condition = 'Win'
+    elif (int(play)) % 3 == bot :
+        condition = 'Tie'
+    return condition
 
 
 top()
 play = enter()
 bot = bot_move()
-win_conditions(play, bot)
+print('Game Outcome: ' + win_conditions(play, bot))
 print('\nEnd of Game')
