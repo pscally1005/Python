@@ -1,6 +1,7 @@
 from os import system
 import random
 
+# Header at top of program
 def top() :
     system('clear')
     print('Welcome to Rock-Paper-Scissors!\n')
@@ -8,6 +9,7 @@ def top() :
     print('Enter "1 for Paper')
     print('Enter "2" for Scissors')
 
+# Code for user to enter a move
 def enter() :
     play = input('\nPlease Enter a Number: ')
     while (play != '0') and (play != '1') and (play != '2') :
@@ -28,6 +30,7 @@ def enter() :
         print('ERROR')
     return play
 
+# Code for enemy responding move
 def bot_move() :
     bot = random.randint(0,2)
     print('Enemy Plays:', end = ' ')
@@ -41,6 +44,7 @@ def bot_move() :
         print('ERROR')
     return bot
 
+# Returns Win, Loss, or Tie
 def win_conditions(play, bot) :
     condition = 'ERROR'
     if (int(play) + 1) % 3 == bot :
@@ -51,7 +55,7 @@ def win_conditions(play, bot) :
         condition = 'Tie'
     return condition
 
-
+# Main code
 top()
 play = enter()
 bot = bot_move()
