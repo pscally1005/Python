@@ -4,7 +4,8 @@ import random
 # prints the board every time a move is made
 def board(b) :
     system('clear')
-    print('\nWelcome to Tick-Tac-Toe!\n')
+    print('\nWelcome to Tick-Tac-Toe!')
+    print('You will be player "X".  The computer will be "O"\n')
 
     print('+---+')
     i = 0
@@ -54,21 +55,6 @@ def enemy(b) :
     return b
 
 def check_win(b) :
-    # check for tie game
-    full = True
-    i = 0
-    for x in b :
-        j = 0
-        for y in b[i] :
-            if b[i][j] == ' ' :
-               full = False
-               break
-            j = j+1
-        i = i+1
-    if full == True :
-        print('\nTie Game')
-        return True
-
     # check for row win or loss
     i = 0
     for x in b :
@@ -125,6 +111,21 @@ def check_win(b) :
         return True
     elif flag_O == True :
         print('\nYou Lose')
+        return True
+    
+    # check for tie game
+    full = True
+    i = 0
+    for x in b :
+        j = 0
+        for y in b[i] :
+            if b[i][j] == ' ' :
+               full = False
+               break
+            j = j+1
+        i = i+1
+    if full == True :
+        print('\nTie Game')
         return True
 
     return False
