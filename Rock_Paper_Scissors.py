@@ -1,21 +1,24 @@
 from os import system
 import random
+import getch
 
 # Header at top of program
 def top() :
     system('clear')
-    print('Welcome to Rock-Paper-Scissors!\n')
+    print('\nWelcome to Rock-Paper-Scissors!\n')
     print('Enter "0" for Rock')
     print('Enter "1 for Paper')
     print('Enter "2" for Scissors')
 
 # Code for user to enter a move
 def enter() :
-    play = input('\nPlease Enter a Number: ')
+    print('\nPlease Enter a Number: ', end = ' ')
+    play = getch.getche()
     while (play != '0') and (play != '1') and (play != '2') :
         top()
         print('\nError: Input is not valid')
-        play = input('Please Enter a Number: ')
+        print('\nPlease Enter a Number: ', end = ' ')
+        play = getch.getche()
 
     top()
     print('\nPlease Enter a Number: ' + str(play))
