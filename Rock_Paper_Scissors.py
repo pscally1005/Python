@@ -16,13 +16,11 @@ def enter() :
     play = getch.getche()
     while (play != '0') and (play != '1') and (play != '2') :
         top()
-        print('\nError: Input is not valid')
+        print('\nError: Input is not valid', end = '')
         print('\nPlease Enter a Number: ', end = ' ')
         play = getch.getche()
 
     top()
-    print('\nPlease Enter a Number: ' + str(play))
-
     if play == '0' :
         print('\nYou entered: Rock')
     elif play == '1' :
