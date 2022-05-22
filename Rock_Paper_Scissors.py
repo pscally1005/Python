@@ -13,12 +13,12 @@ def top() :
 # Code for user to enter a move
 def enter() :
     print('\nPlease Enter a Number: ', end = ' ')
-    play = getch.getche()
+    play = getch.getch()
     while (play != '0') and (play != '1') and (play != '2') :
         top()
         print('\nError: Input is not valid', end = '')
         print('\nPlease Enter a Number: ', end = ' ')
-        play = getch.getche()
+        play = getch.getch()
 
     top()
     if play == '0' :

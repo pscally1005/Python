@@ -9,14 +9,14 @@ def mode() :
     print('\nWelcome to Tic-Tac-Toe!')
     print('\nWould you like to play 1P or 2P?', end = '')
     print('\nPlease enter either "1" or "2": ', end = ' ')
-    m = getch.getche()
+    m = getch.getch()
     while (m.isnumeric() == False) or (int(m) < 1) or (int(m) > 2) :
         system('clear')
         print('\nWelcome to Tic-Tac-Toe!')
         print('\nERROR: Mode type invalid', end = '')
         print('\nWould you like to play 1P or 2P?', end = '')
         print('\nPlease enter either "1" or "2": ', end = ' ')
-        m = getch.getche()
+        m = getch.getch()
     return m
 
 # user inputs size of the board
@@ -25,14 +25,14 @@ def input_size(m) :
     print('\nWelcome to Tic-Tac-Toe!\n')
     print(str(m) + 'P mode selected')
     print('\nPlease Enter a Board Size from 3 to 9: ', end = ' ')
-    size = getch.getche()
+    size = getch.getch()
     while (size.isnumeric() == False) or (int(size) < 3) or (int(size) > 9) :
         system('clear')
         print('\nWelcome to Tic-Tac-Toe!\n')
         print(str(m) + 'P mode selected')
         print('\nERROR: Board size invalid', end = '')
         print('\nPlease Enter a Board Size from 3 to 9: ', end = ' ')
-        size = getch.getche()
+        size = getch.getch()
     return size
 
 # prints the board every time a move is made
